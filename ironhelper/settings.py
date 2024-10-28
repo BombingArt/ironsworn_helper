@@ -16,7 +16,7 @@ from pathlib import Path
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Environment
 env = environ.Env()
@@ -46,7 +46,7 @@ INSTALLED_FRAMEWORKS = [
     'django.contrib.staticfiles',
 ]
 
-INSTALLED_LOCAL_APPS = []
+INSTALLED_LOCAL_APPS = ['user']
 
 INSTALLED_APPS = INSTALLED_FRAMEWORKS + INSTALLED_LOCAL_APPS
 
@@ -124,6 +124,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = 'user.User'
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/

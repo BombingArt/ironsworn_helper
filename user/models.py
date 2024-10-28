@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 
 
 class BaseUserManager(BaseUserManager):
@@ -28,7 +28,7 @@ class BaseUserManager(BaseUserManager):
         return user
 
 
-class User(AbstractBaseUser):
+class User(AbstractBaseUser, PermissionsMixin):
     '''Кастомная модель юзера'''
 
     username = models.CharField(max_length=150, unique=True)
